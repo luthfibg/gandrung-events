@@ -14,7 +14,7 @@ const Home = () => {
                 <VideoBackground videoSource={VIDEO_URL} />
                 
                 {/* Lapisan 2: Konten Carousel/Header (z-index 10) */}
-                <div className="relative z-10 p-4 max-w-4xl text-center">
+                <div className="relative z-10 p-4 max-w-9/10 text-center">
                     <Carousel />
                 </div>
 

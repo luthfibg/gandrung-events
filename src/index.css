@@ -1,4 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import "tailwindcss";
 @import "flowbite/src/themes/enterprise";
 @plugin "flowbite/plugin";
 @source "../node_modules/flowbite";
+
+@theme {
+  --font-mulish: "Mulish", "sans-serif";
+  /* Define custom font stacks */
+}
