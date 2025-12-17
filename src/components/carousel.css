@@ -6,6 +6,31 @@
   opacity: 1;
 }
 
-h2 {
+/* h2 {
   -webkit-text-stroke: 2px white;
+} */
+
+.swiper-pagination {
+  z-index: 99;
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.swiper-pagination > * {
+  background: white;
+  border-radius: 100%;
+  width: 0.3rem !important;
+  height: 0.3rem !important;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: #2563eb;
+  width: 0.8rem !important;
+  height: 0.8rem !important;
+  transition: all 0.3s ease;
 }

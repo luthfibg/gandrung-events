@@ -2,6 +2,7 @@ import React from 'react'
 import VideoBackground from '../components/VideoBackground.jsx'
 import Carousel from '../components/Carousel.jsx'
 import VIDEO_URL from '../assets/background.mp4';
+import WhatsappFloatingButton from '../components/WhatsappFloatingButton.jsx';
 
 const Home = () => {
 
@@ -9,6 +10,8 @@ const Home = () => {
     return (
         <>
             <div className="relative h-screen flex items-center justify-center">
+
+                <WhatsappFloatingButton />
         
                 {/* Lapisan 1: Video Latar Belakang (z-index 0) */}
                 <VideoBackground videoSource={VIDEO_URL} />

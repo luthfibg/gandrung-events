@@ -4,7 +4,7 @@ import React from 'react';
 
 const VideoBackground = ({ videoSource }) => {
   return (
-    <div className="absolute inset-0 overflow-hidden">
+    <div className="absolute inset-0 overflow-hidden z-0">
       <video
         className="w-full h-full object-cover"
         src={videoSource}
@@ -17,7 +17,7 @@ const VideoBackground = ({ videoSource }) => {
       </video>
       
       {/* Overlay gelap untuk visibilitas teks */}
-      <div className="absolute inset-0 bg-black opacity-30 z-10"></div>
+      <div className="absolute inset-0 bg-black opacity-30"></div>
     </div>
   );
 };
