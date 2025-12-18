@@ -10,6 +10,10 @@
   /* Define custom font stacks */
 
   --animate-arrow-guide: arrow-guide 1.5s ease-in-out infinite;
+
+  --color-gandrung-dark: #3d3129;
+  --color-gandrung-gold: #fbbf24;
+  --color-gandrung-surface: #4d4037;
 }
 
 @keyframes arrow-guide {

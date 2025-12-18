@@ -5,6 +5,7 @@ import ShortDescription from '../sections/ShortDescription.jsx'
 import VIDEO_URL from '../assets/background.mp4';
 import WhatsappFloatingButton from '../components/WhatsappFloatingButton.jsx';
 import Category from '../sections/Category.jsx';
+import Services from '../sections/Services.jsx';
 
 const Home = () => {
 
@@ -29,8 +30,15 @@ const Home = () => {
                 <ShortDescription />
             </div>
             <div className='relative z-10 w-full p-4'>
-                <h2 className="xl:text-5xl py-15 font-mulish text-center">Kategori Produk</h2>
+                <h2 className="text-xl lg:text-4xl py-15 font-mulish text-center tracking-wider">Kategori Produk</h2>
                 <Category />
+            </div>
+            <div className='relative z-10 w-full py-4 px-20'>
+                <h2 className="text-xl lg:text-4xl font-mulish text-center py-15 dark:text-white tracking-wider">
+                Mengapa Memilih Kami?
+                </h2>
+
+                <Services />
             </div>
         </>
     )
