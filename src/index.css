@@ -8,4 +8,17 @@
   --font-mulish: "Mulish", "sans-serif";
   --font-teko: "Teko", "sans-serif";
   /* Define custom font stacks */
+
+  --animate-arrow-guide: arrow-guide 1.5s ease-in-out infinite;
+}
+
+@keyframes arrow-guide {
+  0%, 100% { 
+    transform: translateX(0); 
+    opacity: 0.4; 
+  }
+  50% { 
+    transform: translateX(10px); 
+    opacity: 1; 
+  }
 }
