@@ -5,17 +5,21 @@
 @source "../node_modules/flowbite";
 
 @theme {
-  --font-mulish: "Mulish", "sans-serif";
-  --font-teko: "Teko", "sans-serif";
-  /* Define custom font stacks */
+  /* Font Family */
+  --font-mulish: "Mulish", sans-serif;
+  --font-teko: "Teko", sans-serif;
 
-  --animate-arrow-guide: arrow-guide 1.5s ease-in-out infinite;
-
+  /* Colors */
   --color-gandrung-dark: #3d3129;
   --color-gandrung-gold: #fbbf24;
   --color-gandrung-surface: #4d4037;
+
+  /* Animations - Mendaftarkan nama animasi ke keyframes */
+  --animate-arrow-guide: arrow-guide 1.5s ease-in-out infinite;
+  --animate-marquee: marquee 30s linear infinite;
 }
 
+/* Keyframes untuk Arrow Guide */
 @keyframes arrow-guide {
   0%, 100% { 
     transform: translateX(0); 
@@ -24,5 +28,15 @@
   50% { 
     transform: translateX(10px); 
     opacity: 1; 
+  }
+}
+
+/* Keyframes untuk Marquee (Logo Berjalan) */
+@keyframes marquee {
+  0% { 
+    transform: translateX(0%); 
+  }
+  100% { 
+    transform: translateX(-50%); 
   }
 }

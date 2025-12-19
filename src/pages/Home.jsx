@@ -6,6 +6,7 @@ import VIDEO_URL from '../assets/background.mp4';
 import WhatsappFloatingButton from '../components/WhatsappFloatingButton.jsx';
 import Category from '../sections/Category.jsx';
 import Services from '../sections/Services.jsx';
+import Customers from '../sections/Customers.jsx';
 
 const Home = () => {
 
@@ -39,6 +40,9 @@ const Home = () => {
                 </h2>
 
                 <Services />
+            </div>
+            <div className='relative z-10 w-full py-4 px-20'>
+                <Customers />
             </div>
         </>
     )
