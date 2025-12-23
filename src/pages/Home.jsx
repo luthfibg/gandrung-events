@@ -32,18 +32,18 @@ const Home = () => {
             <div className="relative z-10 w-full text-center bg-[#3d31296b] py-8">
                 <ShortDescription />
             </div>
-            <div className='relative z-10 w-full p-4' id='category'>
+            <div className='relative z-10 w-full p-4 lg:px-20' id='category'>
                 <h2 className="text-xl lg:text-4xl py-15 font-mulish text-center tracking-wider">Kategori Produk</h2>
                 <Category />
             </div>
-            <div className='relative z-10 w-full py-4 px-20' id='services'>
+            <div className='relative z-10 w-full py-4 px-5 lg:px-20' id='services'>
                 <h2 className="text-xl lg:text-4xl font-mulish text-center py-15 dark:text-white tracking-wider">
                 Mengapa Memilih Kami?
                 </h2>
 
                 <Services />
             </div>
-            <div className='relative z-10 w-full py-4 px-20' id='customers'>
+            <div className='relative z-10 w-full py-4 px-5 lg:px-20' id='customers'>
                 <Customers />
             </div>
             <div className='relative z-10 w-full p-4' id='gallery'>
