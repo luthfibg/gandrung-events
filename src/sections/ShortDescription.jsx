@@ -16,10 +16,10 @@ yang canggih (up to date)
 
       {/* Kontainer Panah Animasi */}
       <div className="relative flex items-center justify-center w-10 h-10">
-        <div className="absolute inset-0 bg-[#3d3129] rounded-full animate-ping"></div>
+        <div className="absolute inset-0 bg-gandrung-dark rounded-full animate-ping"></div>
         
         <div className="animate-arrow-guide">
-          <ArrowRight className="text-[#3d3129]" size={32} />
+          <ArrowRight className="text-gandrung-dark" size={32} />
         </div>
       </div>
     </div>

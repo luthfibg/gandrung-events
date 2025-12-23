@@ -16,7 +16,7 @@
 
   /* Animations - Mendaftarkan nama animasi ke keyframes */
   --animate-arrow-guide: arrow-guide 1.5s ease-in-out infinite;
-  --animate-marquee: marquee 30s linear infinite;
+  --animate-marquee: marquee 20s linear infinite;
 }
 
 /* Keyframes untuk Arrow Guide */
@@ -37,6 +37,6 @@
     transform: translateX(0%); 
   }
   100% { 
-    transform: translateX(-50%); 
+    transform: translateX(-250%); 
   }
 }

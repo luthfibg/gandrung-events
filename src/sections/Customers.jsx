@@ -17,47 +17,47 @@ import Sportjabar from '../assets/customers/logo-sportjabar.jpg'
 
 const Customers = () => {
   return (
-    <section class="py-10 bg-white">
-        <div class="container mx-auto px-4 mb-8 text-center">
-            <h2 class="text-2xl font-bold">Pelanggan Kami</h2>
+    <section className="py-10 bg-white">
+        <div className="container mx-auto px-4 mb-8 text-center">
+            <h2 className="text-2xl lg:text-4xl font-mulish">Pelanggan Kami</h2>
         </div>
 
-        <div class="relative flex overflow-x-hidden">
-            <div class="flex animate-marquee whitespace-nowrap py-12">
-            <img class="mx-8 h-12" src={logoHotelHorison} alt="Hotel Horison" />
-            <img class="mx-8 h-12" src={logoAncol} alt="Ancol" />
-            <img class="mx-8 h-12" src={logoBankOcbc} alt="Bank OCBC" />
-            <img class="mx-8 h-12" src={logoBrigif17} alt="Brigif 17" />
-            <img class="mx-8 h-12" src={logoBumiSangkuriang} alt="Bumi Sangkuriang" />
-            <img class="mx-8 h-12" src={logoHotelHarris} alt="Hotel Harris" />
-            <img class="mx-8 h-12" src={logoHotelHilton} alt="Hotel Hilton" />
-            <img class="mx-8 h-12" src={logoHotelIntercontinental} alt="Hotel Intercontinental" />
-            <img class="mx-8 h-12" src={logoHtbspm} alt="HTS BPM" />
-            <img class="mx-8 h-12" src={logoItb} alt="ITB" />
-            <img class="mx-8 h-12" src={logoKbp} alt="KBP" />
-            <img class="mx-8 h-12" src={logoKodim} alt="Kodim" />
-            <img class="mx-8 h-12" src={logoMekarwangi} alt="Mekarwangi" />
-            <img class="mx-8 h-12" src={logoPusdikarmed} alt="Pusdikarmed" />
-            <img class="mx-8 h-12" src={Sportjabar} alt="Sport Jabar" />
+        <div className="relative flex overflow-x-hidden">
+            <div className="flex animate-marquee whitespace-nowrap py-20">
+            <img className="mx-8 h-30" src={logoHotelHorison} alt="Hotel Horison" />
+            <img className="mx-8 h-30" src={logoAncol} alt="Ancol" />
+            <img className="mx-8 h-30" src={logoBankOcbc} alt="Bank OCBC" />
+            <img className="mx-8 h-30" src={logoBrigif17} alt="Brigif 17" />
+            <img className="mx-8 h-30" src={logoBumiSangkuriang} alt="Bumi Sangkuriang" />
+            <img className="mx-8 h-30" src={logoHotelHarris} alt="Hotel Harris" />
+            <img className="mx-8 h-30" src={logoHotelHilton} alt="Hotel Hilton" />
+            <img className="mx-8 h-30" src={logoHotelIntercontinental} alt="Hotel Intercontinental" />
+            <img className="mx-8 h-30" src={logoHtbspm} alt="HTS BPM" />
+            <img className="mx-8 h-30" src={logoItb} alt="ITB" />
+            <img className="mx-8 h-30" src={logoKbp} alt="KBP" />
+            <img className="mx-8 h-30" src={logoKodim} alt="Kodim" />
+            <img className="mx-8 h-30" src={logoMekarwangi} alt="Mekarwangi" />
+            <img className="mx-8 h-30" src={logoPusdikarmed} alt="Pusdikarmed" />
+            <img className="mx-8 h-30" src={Sportjabar} alt="Sport Jabar" />
             </div>
 
-            <div class="flex animate-marquee whitespace-nowrap py-12">
-            <img class="mx-8 h-12" src={logoHotelHorison} alt="Hotel Horison" />
-            <img class="mx-8 h-12" src={logoAncol} alt="Ancol" />
-            <img class="mx-8 h-12" src={logoBankOcbc} alt="Bank OCBC" />
-            <img class="mx-8 h-12" src={logoBrigif17} alt="Brigif 17" />
-            <img class="mx-8 h-12" src={logoBumiSangkuriang} alt="Bumi Sangkuriang" />
-            <img class="mx-8 h-12" src={logoHotelHarris} alt="Hotel Harris" />
-            <img class="mx-8 h-12" src={logoHotelHilton} alt="Hotel Hilton" />
-            <img class="mx-8 h-12" src={logoHotelIntercontinental} alt="Hotel Intercontinental" />
-            <img class="mx-8 h-12" src={logoHtbspm} alt="HTS BPM" />
-            <img class="mx-8 h-12" src={logoItb} alt="ITB" />
-            <img class="mx-8 h-12" src={logoKbp} alt="KBP" />
-            <img class="mx-8 h-12" src={logoKodim} alt="Kodim" />
-            <img class="mx-8 h-12" src={logoMekarwangi} alt="Mekarwangi" />
-            <img class="mx-8 h-12" src={logoPusdikarmed} alt="Pusdikarmed" />
-            <img class="mx-8 h-12" src={Sportjabar} alt="Sport Jabar" />
-            </div>
+            {/* <div className="flex animate-marquee whitespace-nowrap py-20">
+              <img className="mx-8 h-20" src={logoHotelHorison} alt="Hotel Horison" />
+              <img className="mx-8 h-20" src={logoAncol} alt="Ancol" />
+              <img className="mx-8 h-20" src={logoBankOcbc} alt="Bank OCBC" />
+              <img className="mx-8 h-20" src={logoBrigif17} alt="Brigif 17" />
+              <img className="mx-8 h-20" src={logoBumiSangkuriang} alt="Bumi Sangkuriang" />
+              <img className="mx-8 h-20" src={logoHotelHarris} alt="Hotel Harris" />
+              <img className="mx-8 h-20" src={logoHotelHilton} alt="Hotel Hilton" />
+              <img className="mx-8 h-20" src={logoHotelIntercontinental} alt="Hotel Intercontinental" />
+              <img className="mx-8 h-20" src={logoHtbspm} alt="HTS BPM" />
+              <img className="mx-8 h-20" src={logoItb} alt="ITB" />
+              <img className="mx-8 h-20" src={logoKbp} alt="KBP" />
+              <img className="mx-8 h-20" src={logoKodim} alt="Kodim" />
+              <img className="mx-8 h-20" src={logoMekarwangi} alt="Mekarwangi" />
+              <img className="mx-8 h-20" src={logoPusdikarmed} alt="Pusdikarmed" />
+              <img className="mx-8 h-20" src={Sportjabar} alt="Sport Jabar" />
+            </div> */}
 
             
         </div>
