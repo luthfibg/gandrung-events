@@ -49,14 +49,17 @@ const Gallery = () => {
             </div>
             <div className="h-fit relative group">
                 <img className="h-auto max-w-full rounded-base" src={g6} alt=""/>
-                {/* <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-80 transition-opacity duration-300 rounded-base">
-                    <p className="text-white text-2xl xl:text-4xl font-mulish text-center p-2">Instalasi - Grand Opening Hotel Widya</p>
-                </div> */}
+                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-80 transition-opacity duration-300 rounded-base">
+                    <p className="text-white text-2xl xl:text-4xl font-mulish text-center p-2">Instalasi - Hotel Aston Samarinda</p>
+                </div>
             </div>
         </div>
         <div className="grid gap-4 h-fit">
             <div className="h-fit relative group">
                 <img className="h-auto max-w-full rounded-base" src={g7} alt=""/>
+                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-80 transition-opacity duration-300 rounded-base">
+                    <p className="text-white text-2xl xl:text-4xl font-mulish text-center p-2">Hotel Aston Samarinda</p>
+                </div>
             </div>
             <div className="h-fit relative group">
                 <img className="h-auto max-w-full rounded-base" src={g8} alt=""/>
@@ -72,6 +75,9 @@ const Gallery = () => {
             </div>
             <div className="h-fit relative group">
                 <img className="h-auto max-w-full rounded-base" src={g10} alt=""/>
+                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-80 transition-opacity duration-300 rounded-base">
+                    <p className="text-white text-2xl xl:text-4xl font-mulish text-center p-2">Instalasi LED - Hotel Aston Samarinda</p>
+                </div>
             </div>
             <div className="h-fit relative group">
                 <img className="h-auto max-w-full rounded-base" src={g11} alt=""/>

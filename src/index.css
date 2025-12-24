@@ -4,6 +4,9 @@
 @plugin "flowbite/plugin";
 @source "../node_modules/flowbite";
 
+@source "../node_modules/preline/dist/*.js";
+@import "../node_modules/preline/variants.css";
+
 @theme {
   /* Font Family */
   --font-mulish: "Mulish", sans-serif;
