@@ -10,14 +10,14 @@ const Catalog = () => {
     // flex-row-reverse membuat sidebar pindah ke kanan di layar besar
     <div className="flex flex-col lg:flex-row-reverse min-h-screen bg-gray-50">
       
-      {/* Sidebar - Menerima state dan fungsi pengubah state */}
+      {/* Sidebar - Menerima state dan fungsi pengubah state, posisi right side */}
       <Sidebar activeSection={activeSection} setActiveSection={setActiveSection} />
       
       {/* Main Content Area */}
-      <main className="flex-1 p-4 lg:p-8">
-        <div className="max-w-6xl mx-auto">
+      <main className="relative flex-1 p-4 lg:p-8 lg:me-64">
+        <div className="w-full mx-auto">
           <header className="mb-8">
-            <h1 className="text-3xl font-bold capitalize text-gray-800">
+            <h1 className="text-3xl font-bold font-mulish capitalize text-gray-800">
               {activeSection.replace('-', ' ')} Catalog
             </h1>
           </header>

@@ -14,7 +14,7 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
   return (
     <>
       {/* Mobile Toggle (Tetap di kiri atau tengah biasanya) */}
-      <div className="lg:hidden p-4 border-b bg-white flex justify-between items-center">
+      <div className="lg:hidden p-4 border-b bg-white flex justify-between items-center font-mulish">
         <span className="font-bold">Gandrung Events</span>
         <button 
           className="p-2 bg-gray-800 text-white rounded-lg"
@@ -26,25 +26,25 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
 
       <div 
         id="hs-sidebar-footer" 
-        className="hs-overlay [--auto-close:lg] lg:block lg:translate-x-0 lg:start-auto lg:end-0 w-64
+        className="hs-overlay [--auto-close:lg] lg:block lg:start-auto lg:end-0 w-64
         hs-overlay-open:translate-x-0 -translate-x-full lg:translate-x-0 transition-all duration-300 transform
         h-full hidden fixed top-0 end-0 bottom-0 z-60 bg-white border-s border-gray-200"
       >
         <div className="relative flex flex-col h-full">
           <header className="p-6 flex justify-between items-center">
-            <a className="font-bold text-xl text-black">Gandrung Events</a>
+            <a className="font-bold text-xl lg:text-3xl text-black font-teko">Gandrung Events</a>
             <button className="lg:hidden" data-hs-overlay="#hs-sidebar-footer">
               <X size={20}/>
             </button>
           </header>
 
-          <nav className="flex-1 overflow-y-auto p-4">
+          <nav className="flex-1 overflow-y-auto p-4 w-full! font-mulish">
             <ul className="space-y-2">
               {menuItems.map((item) => (
                 <li key={item.id}>
                   <button
                     onClick={() => setActiveSection(item.id)}
-                    className={`w-full flex items-center gap-x-3.5 py-2.5 px-3 text-sm rounded-lg transition-colors
+                    className={`w-full justify-start text-start flex items-center gap-x-3.5 py-2.5 px-3 text-sm lg:text-xl rounded-lg transition-colors
                       ${activeSection === item.id 
                         ? 'bg-blue-600 text-white' 
                         : 'text-gray-800 hover:bg-gray-100'}`}

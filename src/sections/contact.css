@@ -57,3 +57,21 @@
     position: relative;
     z-index: 10;
 }
+
+/* Maps styling */
+.info-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+iframe {
+    min-height: 256px;
+}
+
+@media (max-width: 768px) {
+    iframe {
+        min-height: 200px;
+    }
+}
