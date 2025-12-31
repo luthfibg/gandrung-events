@@ -13,15 +13,35 @@ export const productService = {
     }
   },
 
-  // Get single product
+  // Get single product - improved with fallback
   async getById(id) {
     try {
+      // Try normal fetch first
       const response = await fetch(`${API_BASE}/products/${id}`);
-      if (!response.ok) {
-        if (response.status === 404) throw new Error('Produk tidak ditemukan');
-        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      
+      if (response.ok) {
+        return await response.json();
       }
-      return await response.json();
+      
+      // If 404, try to get from all products (in case ID type mismatch)
+      if (response.status === 404) {
+        console.warn(`Product ${id} not found directly, trying to find in all products...`);
+        
+        const allProducts = await this.getAll();
+        const product = allProducts.find(p => 
+          p.id.toString() === id.toString() || 
+          p.id == id  // Loose comparison to handle string/number
+        );
+        
+        if (product) {
+          console.log(`Found product ${id} via filtering`);
+          return product;
+        }
+        
+        throw new Error(`Produk dengan ID ${id} tidak ditemukan`);
+      }
+      
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
     } catch (error) {
       console.error(`Error fetching product ${id}:`, error);
       throw error;
@@ -30,46 +50,69 @@ export const productService = {
 
   // Create new product
   async create(product) {
-    const response = await fetch(`${API_BASE}/products`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(product)
-    });
-    
-    if (!response.ok) throw new Error('Failed to create product');
-    return await response.json();
+    try {
+      const response = await fetch(`${API_BASE}/products`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(product)
+      });
+      
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(`Failed to create product: ${errorText}`);
+      }
+      return await response.json();
+    } catch (error) {
+      console.error('Error creating product:', error);
+      throw error;
+    }
   },
 
   // Update product
   async update(id, product) {
-    const response = await fetch(`${API_BASE}/products/${id}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(product)
-    });
-    
-    if (!response.ok) throw new Error('Failed to update product');
-    return await response.json();
+    try {
+      const response = await fetch(`${API_BASE}/products/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(product)
+      });
+      
+      if (!response.ok) throw new Error('Failed to update product');
+      return await response.json();
+    } catch (error) {
+      console.error(`Error updating product ${id}:`, error);
+      throw error;
+    }
   },
 
   // Delete product
   async delete(id) {
-    const response = await fetch(`${API_BASE}/products/${id}`, {
-      method: 'DELETE'
-    });
-    
-    if (!response.ok) throw new Error('Failed to delete product');
-    return true;
+    try {
+      const response = await fetch(`${API_BASE}/products/${id}`, {
+        method: 'DELETE'
+      });
+      
+      if (!response.ok) throw new Error('Failed to delete product');
+      return true;
+    } catch (error) {
+      console.error(`Error deleting product ${id}:`, error);
+      throw error;
+    }
   },
 
   // Search products
   async search(query) {
-    const response = await fetch(`${API_BASE}/products?q=${query}`);
-    if (!response.ok) throw new Error('Failed to search products');
-    return await response.json();
+    try {
+      const response = await fetch(`${API_BASE}/products?q=${encodeURIComponent(query)}`);
+      if (!response.ok) throw new Error('Failed to search products');
+      return await response.json();
+    } catch (error) {
+      console.error('Error searching products:', error);
+      throw error;
+    }
   }
 };

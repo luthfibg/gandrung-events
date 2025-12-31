@@ -128,7 +128,7 @@ const ProductDetail = () => {
   }
 
   return (
-    <div className="container mx-auto p-4 max-w-6xl">
+    <div className="container font-mulish mx-auto p-4 max-w-6xl">
       <button 
         onClick={() => navigate(-1)}
         className="mb-4 text-blue-500 hover:text-blue-700 flex items-center"
