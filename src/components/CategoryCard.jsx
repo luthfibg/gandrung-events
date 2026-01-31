@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import '../../public/css/categorycard.css'
 import '../../public/js/categorycard.js'
 
@@ -13,7 +14,7 @@ const CategoryCard = ({ name, link, backgroundImage, icon }) => {
                 {icon}
                 <div className="screen-user">
                     <span className="name" data-value={name}>{name}</span>
-                    <a className="link" href={link} target="_blank">Jelajahi</a>
+                    <Link className="link" to={`/${link}`}>Jelajahi</Link>
                 </div>
             </div>
         </div>
