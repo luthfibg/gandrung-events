@@ -93,21 +93,11 @@ const ProductDetail = () => {
         status: 'pending'
       };
 
-      // Save order to JSON Server (create new orders endpoint)
-      const response = await fetch('http://localhost:3001/orders', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(orderPayload)
-      });
-
-      if (response.ok) {
-        alert('Order berhasil dikirim! Kami akan menghubungi Anda segera.');
-        navigate('/');
-      } else {
-        throw new Error('Gagal mengirim order');
-      }
+      // Use centralized order creation from ProductService
+      await productService.createOrder(orderPayload);
+      
+      alert('Order berhasil dikirim! Kami akan menghubungi Anda segera.');
+      navigate('/');
     } catch (error) {
       console.error('Error submitting order:', error);
       alert('Terjadi kesalahan. Silakan coba lagi.');

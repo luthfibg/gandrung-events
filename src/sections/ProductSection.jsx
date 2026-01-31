@@ -14,17 +14,54 @@ const ProductSection = ({ category, searchQuery, onLoadingChange }) => {
   }, [category])
 
   useEffect(() => {
-    if (searchQuery) {
-      const filtered = products.filter(product =>
-        product.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        product.specifications.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        product.type.toLowerCase().includes(searchQuery.toLowerCase())
-      )
-      setFilteredProducts(filtered)
+    if (searchQuery && searchQuery.trim()) {
+      // Server-side search when there's a query
+      const performSearch = async () => {
+        try {
+          setLoading(true)
+          const searchResults = await productService.search(searchQuery)
+          
+          // Filter by category after server-side search
+          const filtered = category === 'all' 
+            ? searchResults 
+            : searchResults.filter(product => 
+                (product.type?.toLowerCase() || '').includes(category.toLowerCase()) ||
+                (category === 'led' && (product.type?.toLowerCase() || '').includes('led'))
+              )
+          
+          setProducts(filtered)
+          setFilteredProducts(filtered)
+        } catch (err) {
+          console.error('Error searching products:', err)
+          // Fallback to client-side search on error
+          performClientSideSearch()
+        } finally {
+          setLoading(false)
+        }
+      }
+      
+      performSearch()
     } else {
+      // Reset to all products when search is cleared
       setFilteredProducts(products)
     }
-  }, [searchQuery, products])
+  }, [searchQuery, products, category])
+
+  // Fallback client-side search function
+  const performClientSideSearch = () => {
+    if (!searchQuery) {
+      setFilteredProducts(products)
+      return
+    }
+    
+    const filtered = products.filter(product =>
+      (product.title?.toLowerCase() || '').includes(searchQuery.toLowerCase()) ||
+      (product.specifications?.toLowerCase() || '').includes(searchQuery.toLowerCase()) ||
+      (product.type?.toLowerCase() || '').includes(searchQuery.toLowerCase()) ||
+      (product.description?.toLowerCase() || '').includes(searchQuery.toLowerCase())
+    )
+    setFilteredProducts(filtered)
+  }
 
   const loadProducts = async () => {
     try {
@@ -33,12 +70,24 @@ const ProductSection = ({ category, searchQuery, onLoadingChange }) => {
       
       const data = await productService.getAll()
       
-      // Filter by category
+      // Validate and sanitize products data
+      const sanitizedProducts = data.map(product => ({
+        ...product,
+        // Ensure required fields have fallbacks
+        title: product.title || 'Untitled Product',
+        type: product.type || 'other',
+        specifications: product.specifications || 'No specifications available',
+        image: product.image || null,
+        rent: product.rent || 0,
+        id: product.id || Math.random().toString(36).substr(2, 9)
+      }))
+      
+      // Filter by category with safe null checks
       const filtered = category === 'all' 
-        ? data 
-        : data.filter(product => 
-            product.type.toLowerCase().includes(category.toLowerCase()) ||
-            (category === 'led' && product.type.toLowerCase().includes('led'))
+        ? sanitizedProducts 
+        : sanitizedProducts.filter(product => 
+            (product.type?.toLowerCase() || '').includes(category.toLowerCase()) ||
+            (category === 'led' && (product.type?.toLowerCase() || '').includes('led'))
           )
       
       setProducts(filtered)
