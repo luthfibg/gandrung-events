@@ -19,9 +19,9 @@ import g17 from '../assets/gallery/g17.jpg'
 import g18 from '../assets/gallery/g18.jpg'
 import g19 from '../assets/gallery/g19.jpg'
 import g20 from '../assets/gallery/g20.jpeg'
-import g21 from '../assets/gallery/g21.jpg'
-import g22 from '../assets/gallery/g22.jpg'
-import g23 from '../assets/gallery/g23.jpg'
+import g21 from '../assets/gallery/g21.JPG'
+import g22 from '../assets/gallery/g22.JPG'
+import g23 from '../assets/gallery/g23.JPG'
 
 const Gallery = () => {
   return (
