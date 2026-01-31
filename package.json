@@ -12,6 +12,7 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.17",
     "flowbite": "^4.0.1",
+    "gsap": "^3.14.2",
     "lucide-react": "^0.556.0",
     "preline": "^3.2.3",
     "react": "^19.2.0",

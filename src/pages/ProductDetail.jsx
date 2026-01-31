@@ -1,15 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { productService } from '../services/ProductService';
+import { useFadeInOnScroll } from '../hooks/useGSAP.js';
 
 const ProductDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  
+
+  // Refs for animations
+  const productRef = useRef(null);
+  const formRef = useRef(null);
+
+  // Apply animations
+  useFadeInOnScroll(productRef, { y: 50, delay: 0.2 });
+  useFadeInOnScroll(formRef, { y: 50, delay: 0.4 });
+
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  
+
   const [orderData, setOrderData] = useState({
     dimensions: { width: '', height: '' },
     eventDate: '',
@@ -182,7 +191,7 @@ const ProductDetail = () => {
         </div>
 
         {/* Order Form */}
-        <div className="lg:w-1/2">
+        <div ref={formRef} className="lg:w-1/2">
           <div className="bg-white rounded-lg shadow-lg p-6">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">Form Pemesanan</h2>
             

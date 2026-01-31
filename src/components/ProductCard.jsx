@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, ShoppingCart, Info } from 'lucide-react';
+import { ShoppingCart, Info } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const ProductCard = ({ data }) => {
@@ -149,18 +149,10 @@ const ProductCard = ({ data }) => {
               </p>
             </div>
             
-            {/* Action Buttons */}
-            <div className="flex flex-col gap-2">
-              <Link 
-                to={`/products/${product.id}`}
-                className="inline-flex items-center justify-center gap-2 py-2.5 px-4 bg-gray-900 dark:bg-white dark:text-gray-900 text-white text-sm font-semibold rounded-xl hover:bg-blue-600 dark:hover:bg-blue-500 transition-colors group/btn"
-              >
-                Detail & Sewa
-                <ExternalLink size={14} className="group-hover/btn:translate-x-0.5 transition-transform" />
-              </Link>
-              
-              <button 
-                className="text-xs text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-center transition-colors"
+            {/* Quick Inquiry */}
+            <div className="text-center">
+              <button
+                className="text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium transition-colors"
                 onClick={() => {/* Add quick inquiry logic */}}
               >
                 Tanya dulu
