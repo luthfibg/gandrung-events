@@ -1,4 +1,4 @@
-const API_BASE = 'https://events-be-ten.vercel.app/';
+const API_BASE = 'https://events-be-ten.vercel.app';
 
 export const productService = {
   // Get all products
